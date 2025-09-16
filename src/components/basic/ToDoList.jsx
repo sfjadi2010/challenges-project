@@ -6,6 +6,10 @@ const handleAddItem = (item) => {
   todoList.push(item);
 };
 
+const handleRemoveItem = (index) => {
+  todoList.splice(index, 1);
+}
+
 const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
 
@@ -32,7 +36,7 @@ const ToDoList = () => {
         {todoList.map((item, index) => (
           <li key={index} className="text-white">
             {item}
-            <button className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded">X</button>
+            <button onClick={() => handleRemoveItem(index)} className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded">X</button>
           </li>
         ))}
       </ul>
