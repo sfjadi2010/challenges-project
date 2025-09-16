@@ -32,7 +32,7 @@ const ToDoList = () => {
       >
         Add Task
       </button>
-      <ul className="list-disc list-inside">
+      <ul className="list-disc list-inside text-left">
         {todoList.map((item, index) => (
           <li key={index} className="text-white">
             {item}
