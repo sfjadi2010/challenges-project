@@ -6,7 +6,7 @@ import ToggleDetails from "@components/basic/ToggleDetails";
 function App() {
   return (
     <>
-      <Greeting name="Alice" message="Hello, Alice!" />
+      <Greeting name="Alice!" message="Hello, " />
       <ClickCounter />
       <ToggleDetails />
     </>
