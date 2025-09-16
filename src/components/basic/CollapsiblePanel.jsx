@@ -2,13 +2,16 @@ import React from "react";
 import Collapsed from "@assets/collapsed.png";
 import Expanded from "@assets/expanded.png";
 
-const CollapsiblePanel = ({ question, answer, isOpen, toggleDetails }) => {
+const CollapsiblePanel = ({ id, question, answer, isOpen, toggleDetails }) => {
   return (
     <div className="container flex flex-col justify-start w-300 p-5 m-5 border border-gray-300 rounded-lg shadow-md">
       <div className="flex align-items-center justify-between">
-        <h2 className="pb-5 text-2xl font-bold">{question}</h2>
+        <h2 className="text-2xl font-bold text-amber-100">{question}</h2>
 
-        <button onClick={toggleDetails} className="border-0 rounded-3xl">
+        <button
+          onClick={() => toggleDetails(id)}
+          className="border-0 rounded-3xl"
+        >
           {isOpen ? (
             <img
               src={Expanded}
@@ -25,7 +28,7 @@ const CollapsiblePanel = ({ question, answer, isOpen, toggleDetails }) => {
         </button>
       </div>
 
-      {isOpen && <p className="text-gray-700 text-left">{answer}</p>}
+      {isOpen && <p className="text-white text-left">{answer}</p>}
     </div>
   );
 };
