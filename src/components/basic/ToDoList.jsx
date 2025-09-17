@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { type } from './../../../node_modules/@isaacs/fs-minipass/dist/commonjs/index.d';
 
 const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
@@ -35,11 +34,11 @@ const ToDoList = () => {
       </button>
       <ul className="list-disc list-inside text-left">
         {todoList.map((item, index) => (
-          <li key={index} className="container flex items-center justify-between text-white w-3">
+          <li key={index} className="container flex items-center justify-between text-white">
             {item}
             <button
               onClick={() => handleRemoveItem(index)}
-              className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded"
+              className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded border-1 border-red-500"
             >
               X
             </button>
