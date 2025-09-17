@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-
-const todoList = [];
-
-const handleAddItem = (item) => {
-  todoList.push(item);
-};
-
-const handleRemoveItem = (index) => {
-  todoList.splice(index, 1);
-}
+import { type } from './../../../node_modules/@isaacs/fs-minipass/dist/commonjs/index.d';
 
 const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
+  const [todoList, setTodoList] = useState([]);
+
+  const handleAddItem = (item) => {
+    setTodoList([...todoList, item]);
+  };
+
+  const handleRemoveItem = (index) => {
+    const updatedList = todoList.filter((_, i) => i !== index);
+    setTodoList(updatedList);
+  };
 
   return (
     <div className="container flex flex-col items-center justify-center p-5 m-5 border border-gray-300 rounded-lg shadow-md">
@@ -34,9 +35,14 @@ const ToDoList = () => {
       </button>
       <ul className="list-disc list-inside text-left">
         {todoList.map((item, index) => (
-          <li key={index} className="text-white">
+          <li key={index} className="container flex items-center justify-between text-white w-3">
             {item}
-            <button onClick={() => handleRemoveItem(index)} className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded">X</button>
+            <button
+              onClick={() => handleRemoveItem(index)}
+              className="ml-4 text-red-500 hover:text-red-700 hover:bg-amber-50 pl-2 pr-2 rounded"
+            >
+              X
+            </button>
           </li>
         ))}
       </ul>
