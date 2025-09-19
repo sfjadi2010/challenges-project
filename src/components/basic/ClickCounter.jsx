@@ -12,7 +12,7 @@ const ClickCounter = () => {
 
   return (
     <div className="container flex flex-col items-center justify-center p-5 m-5 border border-gray-300 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold">Click Counter</h2>
+      <h2 className="text-2xl font-bold">Click Counter</h2>
       <div className="text-3xl font-bold m-5">{count}</div>
       <div className="space-x-4">
         <button onClick={handleClick}>Increment</button>
